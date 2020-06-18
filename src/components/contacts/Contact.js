@@ -1,7 +1,8 @@
 import React from 'react';
 
 
-const Contact = (props) => {
+const Contact = ({contact}) => {
+    const {name, phone,email} = contact;
     return (
         <tr>
             <td>
@@ -10,9 +11,9 @@ const Contact = (props) => {
                     <label className = "custom-control-label"></label>
                 </div>
             </td>
-            <td>{props.contact.name}</td>
-            <td>{props.contact.phone}</td>
-            <td>{props.contact.email}</td>
+            <td>{name}</td>
+            <td>{phone}</td>
+            <td>{email}</td>
         </tr>
     )
 }
