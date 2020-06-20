@@ -1,6 +1,17 @@
 import { createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension'
 
+//actions
+
+export const addContact = (contact) => {
+  return {
+    type: "CREATE_CONTACT",
+    payload: contact,
+  };
+}
+
+
+
 const initState = {
     contacts: [
         {
@@ -238,6 +249,10 @@ const initState = {
 
   const contactReducer = (state = initState, action) => {
       switch(action.type) {
+          case "CREATE_CONTACT":
+            return {
+              contacts: [action.payload, ...state.contacts]
+            }
           default:
               return state
       }
