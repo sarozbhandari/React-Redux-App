@@ -5,7 +5,6 @@ import Contact from './Contact';
 
 const Contacts = () => {
     const contacts = useSelector((state) => state.contacts );
-    console.log(contacts);
     return (
         <div>
             <table className="table shadow">

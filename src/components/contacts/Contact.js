@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Avatar from 'react-avatar'
 
 const Contact = ({contact}) => {
     const {name, phone,email} = contact;
@@ -11,7 +11,7 @@ const Contact = ({contact}) => {
                     <label className = "custom-control-label"></label>
                 </div>
             </td>
-            <td>{name}</td>
+            <td><Avatar className = "mr-2" name = {name} size = "30" round = {true}/>{name}</td>
             <td>{phone}</td>
             <td>{email}</td>
         </tr>
