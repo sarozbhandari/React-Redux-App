@@ -1,9 +1,13 @@
 import React, {useState} from 'react';
 import {useDispatch } from 'react-redux';
-import {addContact} from '../../store'
+import {addContact} from '../../redux/actions/contactAction';
+import shortid from 'shortid';
+import { useHistory } from 'react-router-dom';
+
 
 const AddContact = () => {
     const dispatch = useDispatch()
+    let history = useHistory();
 
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -12,11 +16,13 @@ const AddContact = () => {
     const createContact = (e) => {
         e.preventDefault();
         const newContact = {
+            id: shortid.generate(),
             name: name,
             phone: phone,
             email: email,
         }
         dispatch(addContact(newContact));
+        history.push("/");
 
     }
 
